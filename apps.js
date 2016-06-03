@@ -1,29 +1,50 @@
 $( function () {
  
-  $('form').submit( function (e){
-    e.preventDefault();
+  $('select.conference').change( function (){
+    $('*').removeClass('gray').fadeIn();
+    $('img').addClass('transform');
+
+
+    // Division Drop Down Fades Out when no conference is selected
+    $('.easternDivisionMenu, .westernDivisionMenu').fadeOut();
+
+
+
+    var conferenceSelected = $(this).val();
     
-    var programType = $('.programType').val();
-    var educationLevel = $('.educationLevel').val();
-    
-    if (programType === null && educationLevel === null) {
-      console.log('all logos light up');
-      $('.logoWrapper').html("");
-      $('.logoWrapper').html("<table class=logosTable><tr><td><img src='images/aci - color.png'><td><img src='images/acm - color.png'><td><img src='images/AFE color.png'><td><img src='images/aci - color.png'><tr><td><img src='images/acm - color.png'><td><img src='images/aci - color.png'><td><img src='images/acm - color.png'><td><img src='images/AFE color.png'></table>")
-    
-    } else if (programType === 'scholarship' && educationLevel === null) {
-      $('.logoWrapper').html("");
-    } else if (programType === null && educationLevel === 'kindergarten') {
-      $('.logoWrapper').html("");
-    } else if (programType === 'scholarship' && educationLevel === 'kindergarten') {
-      $('.logoWrapper').html("");
-    } else if (programType === 'scholarship' && educationLevel === 'highSchool') {
-      $('.logoWrapper').html("");
-    } else if (programType === 'loan' && educationLevel === null) {
-      $('.logoWrapper').html("");
-    } else if (programType === 'scholarship' && educationLevel === null) {
-      $('.logoWrapper').html("");
-    }
-    
+    if (conferenceSelected === 'eastern') {
+
+      $('.easternDivisionMenu').fadeIn();
+      $('.western img').addClass('gray');
+      // rotates nba team logo 180deg
+      $('.eastern img').removeClass('transform');
+      $('select.easternDivisionMenu').change( function (){
+        $('.eastern img').removeClass('gray');
+        $('.eastern').removeClass('gray').fadeIn();
+        if ($(this).val() === 'atlantic') {
+          $('li:not(.atlantic)').addClass('gray').fadeOut();
+        } else if ($(this).val() === 'central') {
+          $('li:not(.central)').addClass('gray').fadeOut();
+        } else if ($(this).val() === 'southEast') {
+          $('li:not(.southEast)').addClass('gray').fadeOut();
+        }; 
+      });
+    } else if (conferenceSelected === 'western') {
+      
+      $('.westernDivisionMenu').fadeIn();
+      $('.eastern img').addClass('gray');
+      $('.western img').removeClass('transform');
+      $('select.westernDivisionMenu').change(function (){
+        $('.western img').removeClass('gray');
+        $('.western').removeClass('gray').fadeIn();
+        if($(this).val() === 'pacific'){
+          $('li:not(.pacific)').addClass('gray').fadeOut();
+        } else if($(this).val() === 'southWest'){
+          $('li:not(.southWest').addClass('gray').fadeOut();
+        } if($(this).val() === 'northWest'){
+          $('li:not(.northWest').addClass('gray').fadeOut();
+        }
+      });
+    };
   });
 });

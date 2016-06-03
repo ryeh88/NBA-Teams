@@ -2,49 +2,73 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Logos</title>
-	<style type="text/css"></style>
+	<title>NBA Teams</title>
+	<link href='https://fonts.googleapis.com/css?family=Tinos:700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript" src="apps.js"></script>
 </head>
 <body>
 
-<div class="heading-bar"><h1>Society Education Programs</h1></div>
+<div class="heading-bar"><h1>NBA Teams By Conference and Division</h1></div>
 <div class="searchWrapper">
-<div class="scholarshipSearch">
-<form>
-<select class="programType">
-  <option value="" disabled selected>Program Type</option>
-  <option value="scholarship">Scholarship</option>
-  <option value="loan">Loan</option>
+<div class="nbaSearch">
+
+<select class="conference">
+  <option value="0">Please Select A Conference</option>
+  <option value="eastern">Eastern</option>
+  <option value="western">Western</option>
 </select>
-<select class="educationLevel">
-  <option value="" disabled selected>Education Level</option>
-  <option value="kindergarten">Kindergarten</option>
-  <option value="highSchool">High School</option>
+<select class="easternDivisionMenu" style="display:none;">
+  <option value="0">Please Select a Division</option>
+  <option value="atlantic">ATLANTIC</option>
+  <option value="central">CENTRAL</option>
+  <option value="southEast">SOUTHWEST</option>
 </select>
-<input type="submit" value="Submit"></button>
-</form>
+<select class="westernDivisionMenu" style="display: none;">
+  <option value="0">Please Select a Division</option>
+  <option value="pacific">PACIFIC</option>
+  <option value="southWest">SOUTHWEST</option>
+  <option value="northWest">NORTHWEST</option>
+</select>
+
+
+
 </div>
-	
-		
-</div>
+	</div>
 <div class="logoWrapper">
-	<table  class="logosTable" >
-		<tr>
-			<td><img src="images/aci.png"></td>
-			<td><img src="images/acm - fade copy 2.png"></td>
-			<td><img src="images/AFE - fade.png"></td>
-			<td><img src="images/aci.png"></td>
-		</tr>
-		<tr>
-			<td><img src="images/acm - fade copy 2.png"></td>
-			<td><img src="images/aci.png"></td>
-			<td><img src="images/acm - fade copy 2.png"></td>
-			<td><img src="images/AFE - fade.png"></td>
-		</tr>
-	</table>
+	<ul>
+		<li class="atl eastern southEast"><img class="transform" src="nba-teams/atl.gif"></li>
+		<li class="bos eastern atlantic"><img class="transform" src="nba-teams/bos.gif"></li>
+		<li class="brk eastern atlantic"><img class="transform" src="nba-teams/brk.gif"></li>
+		<li class="cha eastern southEast"><img class="transform" src="nba-teams/cha.gif"></li>
+		<li class="chi eastern central"><img class="transform" src="nba-teams/chi.gif"></li>
+		<li class="cle eastern central"><img class="transform" src="nba-teams/cle.gif"></li>
+		<li class="dal western southWest"><img class="transform" src="nba-teams/dal.gif"></li>
+		<li class="den western northWest"><img class="transform" src="nba-teams/den.gif"></li>
+		<li class="det eastern central"><img class="transform" src="nba-teams/det.gif"></li>
+		<li class="gsw western pacific"><img class="transform" src="nba-teams/gsw.gif"></li>
+		<li class="hou western southWest"><img class="transform" src="nba-teams/hou.gif"></li>
+		<li class="ind eastern central"><img class="transform" src="nba-teams/ind.gif"></li>
+		<li class="lac western pacific"><img class="transform" src="nba-teams/lac.gif"></li>
+		<li class="lal western pacific"><img class="transform" src="nba-teams/lal.gif"></li>
+		<li class="mem western southWest"><img class="transform" src="nba-teams/mem.gif"></li>
+		<li class="mia eastern southEast"><img class="transform" src="nba-teams/mia.gif"></li>
+		<li class="mil eastern central"><img class="transform" src="nba-teams/mil.gif"></li>
+		<li class="min western northWest"><img class="transform" src="nba-teams/min.gif"></li>
+		<li class="nop western southWest"><img class="transform" src="nba-teams/nop.gif"></li>
+		<li class="nyk eastern atlantic"><img class="transform" src="nba-teams/nyk.gif"></li>
+		<li class="okc western northWest"><img class="transform" src="nba-teams/okc.gif"></li>
+		<li class="orl eastern southEast"><img class="transform" src="nba-teams/orl.gif"></li>
+		<li class="phi eastern atlantic"><img class="transform" src="nba-teams/phi.gif"></li>
+		<li class="phx western pacific"><img class="transform" src="nba-teams/phx.gif"></li>
+		<li class="por western northWest"><img class="transform" src="nba-teams/por.gif"></li>
+		<li class="sac western pacific"><img class="transform" src="nba-teams/sac.gif"></li>
+		<li class="sas western southWest"><img class="transform" src="nba-teams/sas.gif"></li>
+		<li class="tor eastern atlantic"><img class="transform" src="nba-teams/tor.gif"></li>
+		<li class="uta western northWest"><img class="transform" src="nba-teams/uta.gif"></li>
+		<li class="was western southWest"><img class="transform" src="nba-teams/was.gif"></li>
+	</ul>
 </div>
 
 
