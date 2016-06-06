@@ -1,6 +1,40 @@
 $( function () {
+
+$('li').click( function () {
+  var teamId = $(this).attr('id');
+  getTeamInfo(teamId);
+  $('.teamsInfo').show();
+  $(document).mouseup(function (e) {
+    var container = $(".teamsInfo");
+    if (!container.is(e.target) // if the target of the click isn't the container...
+    && container.has(e.target).length === 0){ // ... nor a descendant of the container
+      container.hide();
+    }
+  });
+});
+
+function getTeamInfo (teamId) {
+  $.ajax({
+    type: "GET",
+    dataType: 'jsonp',
+    contentType: "application/jsonp; charset=utf-8",
+    url: "http://stats.nba.com/stats/teamdetails?teamID=" + teamId,
+    success: function(data) {
+        $.each(data.resultSets, function(i, item) { 
+          $('.teamName').html(data.resultSets[1].rowSet[0][1] + " " + data.resultSets[1].rowSet[0][2]);
+          $('.socialOne').html("<a href='" +data.resultSets[2].rowSet[0][1] + "'><img src='images/facebook.png'></img></a>")
+          $('.socialTwo').html("<a href='" +data.resultSets[2].rowSet[1][1] + "'><img src='images/instagram.png'></img></a>");
+          $('.socialThree').html("<a href='" +data.resultSets[2].rowSet[2][1] + "'><img src='images/twitter.png'></img></a>")
+          $('td#championships').append(data.resultSets[3].rowSet[i][0] + " ");
+          console.log(this); 
+        });
+    }
+  });
+};
+
+
  
-  $('select.conference').change( function (){
+   $('select.conference').change( function (){
     $('*').removeClass('gray').fadeIn();
     $('img').addClass('transform');
 
